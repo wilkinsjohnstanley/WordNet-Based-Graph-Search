@@ -14,7 +14,7 @@ This project implements a WordNet semantic relationship analyzer. It utilizes gr
 - **Programming Language**: Java
 - **IDE**: Visual Studio Code
 - **Java Version**: Ensure you have JDK (Java Development Kit) version 8 or later installed.
-- **Extensions**: Install the "Extension Pack for Java" in Visual Studio Code for Java development.
+- **Extensions**: Install the "Extension Pack for Java" in Visual Studio Code for Java development. Alternatively, search Visual Studio Code Coding Pack for Java and select the Visual Studio Code website link. This downloadable will detect whatever is missing from your computer that is needed to run Java projects.
 
 ---
 
@@ -26,9 +26,12 @@ This project implements a WordNet semantic relationship analyzer. It utilizes gr
 3. **Install Visual Studio Code**: If not already installed, download Visual Studio Code from [here](https://code.visualstudio.com/).
 4. **Install Java Extensions**: Open Visual Studio Code and install the "Extension Pack for Java" from the Extensions Marketplace.
 
-### 2. Prepare the Project
-1. Create a new folder for the project.
-2. Add the main project files (`Outcast.java`, `SAP.java`, `WordNet.java`) to this folder.
+### 2. Project Files
+1. The main project files (`Outcast.java`, `SAP.java`, `WordNet.java`) are in the project folder.
+2. algs4.jar is in the lib folder. It's contents are also in the edu folder for redundency. To use the library: Update your classpath to include the JAR file when compiling and running your project. One possible way to do this is to Add a launch.json configuration for Java with the classpath pointing to lib/algs4.jar.
+3. Instead of using algs4.jar, I have the algs4 library files extracted and stored in courseProject\src\edu\princeton\cs\algs4, you can compile and run your project without needing the JAR file. To compile the project, you must include the src directory as the root of the classpath. Navigate to the courseProject directory and use the following command: javac -cp src src/project/*.java
+
+
 
 ### 3. Open the Project in Visual Studio Code
 1. Open Visual Studio Code.
@@ -42,13 +45,28 @@ This project implements a WordNet semantic relationship analyzer. It utilizes gr
 ### 5. Run the Prorgram
 Execute the program using the java command:
 java <MainClass> (Replace with approprite class containing the main method)
+
 ### 6. Example Usage
-1. To detect an outcast word:
-java Outcast input.txt
+1. Outcast.java
+To detect an outcast word:
+
+Directory: Be in the src/project directory (or where your compiled .class files for Outcast.java are).
+
+Ensure you've compiled all the Java files: Nagivate to the courseProject/src directory and run the following to compile: javac project/*.java
+
+Run Outcast.java: From the src/project directory, run: 
+java project.Outcast "C:/Users/YOURUSERNAME/OneDrive/Desktop/courseProject/src/data/outcast2.txt"
+
+Or java project.Outcast input.txt (if in the same folder I think)
 (Replace input.txt with your input file containing the words)
-2. To calculate the shortestt ancestral path
+
+2. SAP.java
+To calculate the shortest ancestral path
 java SAP word1 word2
 (Replace word1 and word2 with the words for which you want to find the SAP).
+3. WordNet.java
+java WordNet
+
 ### Additional Considerations
 1. Ensure all inputt files are in the same directory as the compiled .class files or provide the full file path.
 2. If you encounter issues with the setup, check your Java installation and environment variables.
@@ -57,3 +75,5 @@ java SAP word1 word2
 To help you set up quickly, you can install the Coding Pack for Java, which includes VS Code, the Java Development Kit (JDK), and essential Java extensions. The Coding Pack can be used as a clean installation, or to update or repair an existing development environment.
 
 After installing the CTRL+SHIFT+P and click Java:Configure Java Runtime. Configure the dependencies.
+4. Class Root: The src folder must be the root for the edu and project packages. This ensures that the compiler and runtime environment can locate the classes correctly.
+5. Package Declarations: All files in the edu.princeton.cs.algs4 folder should retain their "package edu.princeton.cs.algs4;" declaration at the top of each file. Or, if you choose to use the algs4.jar file, "import edu.princeton.cs.algs4" along with configuring the environment to use the file as explained earlier in this README.md file.
