@@ -1,32 +1,29 @@
-// package edu.princeton.cs.algs4;
-// package project;
-
+package project;
 
 public class WordNetExample {
     public static void main(String[] args) {
-        // Paths to synsets and hypernyms files
-        String synsetsFile = "src\\data\\synsets11.txt";
-        String hypernymsFile = "src\\data\\hypernyms.txt";
-
-        // Create a WordNet instance
+        // String synsetsFile = "src/data/synsets.txt";
+        // String hypernymsFile = "src/data/hypernyms.txt";
+        String synsetsFile = "C:/Users/thepo/OneDrive/Desktop/courseProject/src/data/synsets.txt";
+        String hypernymsFile = "C:/Users/thepo/OneDrive/Desktop/courseProject/src/data/hypernyms.txt";
+        
+        // Create WordNet instance
         WordNet wordNet = new WordNet(synsetsFile, hypernymsFile);
 
-        // List all nouns
-        System.out.println("All nouns in the WordNet:");
+        // Example usage of WordNet methods
+        System.out.println("All WordNet nouns:");
         for (String noun : wordNet.nouns()) {
             System.out.println(noun);
         }
 
-        // Check if a word is a WordNet noun
-        String testWord = "word1";
-        System.out.println("\nIs '" + testWord + "' a WordNet noun? " + wordNet.isNoun(testWord));
+        // Example of distance calculation
+        String nounA = "horse";
+        String nounB = "zebra";
+        System.out.println("Distance between " + nounA + " and " + nounB + ": " +
+                           wordNet.distance(nounA, nounB));
 
-        // Calculate distance between two nouns
-        String nounA = "word0";
-        String nounB = "word3";
-        System.out.println("\nDistance between '" + nounA + "' and '" + nounB + "': " + wordNet.distance(nounA, nounB));
-
-        // Find common ancestor of two nouns
-        System.out.println("\nCommon ancestor of '" + nounA + "' and '" + nounB + "': " + wordNet.sap(nounA, nounB));
+        // Example of shortest ancestral path (SAP)
+        System.out.println("SAP between " + nounA + " and " + nounB + ": " +
+                           wordNet.sap(nounA, nounB));
     }
 }

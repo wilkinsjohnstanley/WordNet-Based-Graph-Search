@@ -29,7 +29,7 @@ This project implements a WordNet semantic relationship analyzer. It utilizes gr
 ### 2. Project Files
 1. The main project files (`Outcast.java`, `SAP.java`, `WordNet.java`) are in the project folder.
 2. algs4.jar is in the lib folder. It's contents are also in the edu folder for redundency. To use the library: Update your classpath to include the JAR file when compiling and running your project. One possible way to do this is to Add a launch.json configuration for Java with the classpath pointing to lib/algs4.jar.
-3. Instead of using algs4.jar, I have the algs4 library files extracted and stored in courseProject\src\edu\princeton\cs\algs4, you can compile and run your project without needing the JAR file. To compile the project, you must include the src directory as the root of the classpath. Navigate to the courseProject directory and use the following command: javac -cp src src/project/*.java
+3. If this is too difficult, I have the algs4 library files extracted and stored in courseProject\src\edu\princeton\cs\algs4, you can compile and run your project without needing the JAR file. To compile the project, you must include the src directory as the root of the classpath. Navigate to the courseProject directory and use the following command: javac -cp src src/project/*.java
 
 
 
@@ -38,10 +38,23 @@ This project implements a WordNet semantic relationship analyzer. It utilizes gr
 2. Go to `File > Open Folder` and select the project folder.
 
 ### 4. Compile the Program
+When compiling and running Java programs that are inside a package, you need to make sure you're running them from the root of the source directory and using the correct classpath.
+
+#For example: cd C:\Users\userName\OneDrive\Desktop\courseProject\src
+javac project/SAP.java
+To Run; Then, run the class using the fully qualified name: java project.SAP input.txt
+
+
+
 1. Open the terminal in Visual Studio Code (`Ctrl + ` ` or `View > Terminal`).
 2. Use the `javac` command to compile the `.java` files:
    ```bash
    javac Outcast.java SAP.java WordNet.java
+3. Alternatively:
+Compile All Files: Ensure that you compile both WordNet.java and WordNetExample.java together. In the courseProject/src directory, run:
+
+ javac project/*.java edu/princeton/cs/algs4/*.java
+
 ### 5. Run the Prorgram
 Execute the program using the java command:
 java <MainClass> (Replace with approprite class containing the main method)
@@ -54,18 +67,39 @@ Directory: Be in the src/project directory (or where your compiled .class files 
 
 Ensure you've compiled all the Java files: Nagivate to the courseProject/src directory and run the following to compile: javac project/*.java
 
-Run Outcast.java: From the src/project directory, run: 
-java project.Outcast "C:/Users/YOURUSERNAME/OneDrive/Desktop/courseProject/src/data/outcast2.txt"
+##Run the Program:
 
-Or java project.Outcast input.txt (if in the same folder I think)
-(Replace input.txt with your input file containing the words)
+Assuming the .class files for Outcast, WordNet, and any dependencies are all in the project package and your current directory is C:\Users\userName\OneDrive\Desktop\courseProject\src\project, you can run the Outcast program like this:
+
 
 2. SAP.java
 To calculate the shortest ancestral path
-java SAP word1 word2
-(Replace word1 and word2 with the words for which you want to find the SAP).
+In the courseProject\src directory: java project.SAP C:\Users\userName\OneDrive\Desktop\courseProject\src\data\digraph1.txt
+(Replace digraph1.txt with the input you desire).
+
+Directory: Be in the src/project directory (or where your compiled .class files for SAP.java are).
+
+Next Step (after running the command):
+
+    The program will expect you to input pairs of integers (representing vertices) for which it will calculate the shortest ancestral path and the common ancestor.
+    For example, after you run the above command, you can enter: 1 2 3 4
+    and it will compute the length and ancestor for each pair.
+    
+
+Problems?
+
+Ensure you've compiled all your Java files: Navigate to the courseProject/src directory and run: javac project/*.java
+
+
+
+
 3. WordNet.java
-java WordNet
+Directory: Be in the src/project directory (or where your compiled .class files for WordNet.java are).
+
+Ensure you've compiled all your Java files: Navigate to the courseProject/src directory and run: javac project/*.java
+
+Run WordNet.java: From the src/project directory, run:
+java project.WordNet
 
 ### Additional Considerations
 1. Ensure all inputt files are in the same directory as the compiled .class files or provide the full file path.
