@@ -71,6 +71,12 @@ Ensure you've compiled all the Java files: Nagivate to the courseProject/src dir
 
 Assuming the .class files for Outcast, WordNet, and any dependencies are all in the project package and your current directory is C:\Users\userName\OneDrive\Desktop\courseProject\src\project, you can run the Outcast program like this:
 
+Format:
+java -cp ".;C:\path\to\algs4.jar" project.Outcast C:\path\to\synsets.txt C:\path\to\hypernyms.txt C:\path\to\input1.txt C:\path\to\input2.txt
+
+Actual Format (change to the path based on your file system!)
+java -cp ".;C:\path\to\algs4.jar" project.Outcast C:\Users\userName\OneDrive\Desktop\courseProject\src\data\synsets.txt C:\Users\userName\OneDrive\Desktop\courseProject\src\data\hypernyms.txt C:\Users\userName\OneDrive\Desktop\courseProject\src\sampleInputs\input1.txt C:\Users\userName\OneDrive\Desktop\courseProject\src\sampleInputs\input2.txt
+
 
 2. SAP.java
 To calculate the shortest ancestral path
