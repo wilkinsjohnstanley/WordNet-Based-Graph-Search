@@ -1,0 +1,15 @@
+{
+    "version": "21.0.5",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Launch Current File",
+        "request": "launch",
+        "mainClass": "Outcast.java",
+        "projectName": "courseProject",
+        // "vmArgs": "-cp lib/algs4.jar"
+
+      }
+    ]
+  }
+  
